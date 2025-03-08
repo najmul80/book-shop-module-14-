@@ -1,0 +1,538 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        
+        <meta charset="utf-8" />
+        <title>Dashboard | Authors</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+        <meta content="Themesbrand" name="author" />
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- Bootstrap Css -->
+        <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+        <!-- Icons Css -->
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <!-- App Css-->
+        <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body data-sidebar="dark">
+
+    <!-- <body data-layout="horizontal" data-topbar="dark"> -->
+
+        <!-- Begin page -->
+        <div id="layout-wrapper">
+
+            
+            <header id="page-topbar">
+                <div class="navbar-header">
+                    <div class="d-flex">
+                        <!-- LOGO -->
+                        <div class="navbar-brand-box">
+                            <a href="index.html" class="logo logo-dark">
+                                <span class="logo-sm">
+                                    <img src="assets/images/logo.svg" alt="" height="22">
+                                </span>
+                                <span class="logo-lg">
+                                    <img src="assets/images/logo-dark.png" alt="" height="17">
+                                </span>
+                            </a>
+
+                            <a href="index.html" class="logo logo-light">
+                                <span class="logo-sm">
+                                    <img src="assets/images/logo-light.svg" alt="" height="22">
+                                </span>
+                                <span class="logo-lg">
+                                    <img src="assets/images/logo-light.png" alt="" height="19">
+                                </span>
+                            </a>
+                        </div>
+
+                     
+
+                    </div>
+
+                   
+                </div>
+            </header>
+
+            <!-- ========== Left Sidebar Start ========== -->
+            <div class="vertical-menu">
+
+                <div data-simplebar class="h-100">
+
+                    <!--- Sidemenu -->
+                    <div id="sidebar-menu">
+                        <!-- Left Menu Start -->
+                        <ul class="metismenu list-unstyled" id="side-menu">
+                            <li class="menu-title" key="t-menu">Menu</li>
+
+                        
+                            <li>
+                                <a href="authors.html" class="waves-effect">
+                                    <i class="bx bx-calendar"></i>
+                                    <span key="t-calendar">Authors Management</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="books.html" class="waves-effect">
+                                    <i class="bx bx-chat"></i>
+                                    <span key="t-chat">Book Management</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="customer.html" class="waves-effect">
+                                    <i class="bx bx-file"></i>
+                                    <span key="t-file-manager">Customer Management</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="orders.html" class="waves-effect">
+                                    <i class="bx bx-file"></i>
+                                    <span key="t-file-manager">Order Management</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Sidebar -->
+                </div>
+            </div>
+            <!-- Left Sidebar End -->
+
+            
+
+            <!-- ============================================================== -->
+            <!-- Start right Content here -->
+            <!-- ============================================================== -->
+            <div class="main-content">
+
+                <div class="page-content">
+                    <div class="container-fluid">
+
+                        <!-- start page title -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                                    <h4 class="mb-sm-0 font-size-18">Dashboard</h4>
+
+                                    <div class="page-title-right">
+                                        <ol class="breadcrumb m-0">
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboards</a></li>
+                                            <li class="breadcrumb-item active">Dashboard</li>
+                                        </ol>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end page title -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="row mb-2">
+                                            <div class="col-sm-4">
+                                                <div class="search-box me-2 mb-2 d-inline-block">
+                                                    <div class="position-relative">
+                                                        <input type="text" class="form-control" placeholder="Search...">
+                                                        <i class="bx bx-search-alt search-icon"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <div class="text-sm-end">
+                                                    <button type="button" class="btn btn-success btn-rounded waves-effect waves-light mb-2 me-2" data-bs-toggle="modal" data-bs-target="#addAuthorModal"><i class="mdi mdi-plus me-1"></i> New Author</button>
+                                                </div>
+                                            </div><!-- end col-->
+                                        </div>
+
+                                        <div class="table-responsive">
+                                            <table class="table align-middle table-nowrap">
+                                                <thead>
+                                                    <tr>
+                                                        <th>ID</th>
+                                                        <th>Username</th>
+                                                        <th>Email</th>
+                                                        <th>Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="authorList">
+                                                   
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <ul class="pagination pagination-rounded justify-content-end mb-2">
+                                            <li class="page-item disabled">
+                                                <a class="page-link" href="javascript: void(0);" aria-label="Previous">
+                                                    <i class="mdi mdi-chevron-left"></i>
+                                                </a>
+                                            </li>
+                                            <li class="page-item active"><a class="page-link" href="javascript: void(0);">1</a></li>
+                                            <li class="page-item"><a class="page-link" href="javascript: void(0);">2</a></li>
+                                            <li class="page-item"><a class="page-link" href="javascript: void(0);">3</a></li>
+                                            <li class="page-item"><a class="page-link" href="javascript: void(0);">4</a></li>
+                                            <li class="page-item"><a class="page-link" href="javascript: void(0);">5</a></li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="javascript: void(0);" aria-label="Next">
+                                                    <i class="mdi mdi-chevron-right"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row -->
+                       
+                    </div>
+                    <!-- container-fluid -->
+                </div>
+                <!-- End Page-content -->
+
+                <!-- Add author modal -->
+                <div id="addAuthorModal" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="myModalLabel">Add New Author</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="mb-3">
+                                    <label for="authorName" class="form-label">Author name</label>
+                                    <input type="text" class="form-control" name="name" id="name">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="authorEmail" class="form-label">Author Email</label>
+                                    <input type="email" class="form-control" name="email" id="email">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Close</button>
+                                <button type="button" onclick="addAuthor()" class="btn btn-primary waves-effect waves-light">Save changes</button>
+                            </div>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal-dialog -->
+                </div><!-- /.modal -->
+
+                <!-- Update author modal -->
+                <div id="updateAuthorModal" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="myModalLabel">Edit Author</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="mb-3">
+                                    <label for="authorName" class="form-label">Author name</label>
+                                    <input type="text" class="form-control" name="name" id="nameEdit">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="authorEmail" class="form-label">Author Email</label>
+                                    <input type="email" class="form-control" name="email" id="emailEdit">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Close</button>
+                                <button type="button" onclick="updateAuthor()" class="btn btn-primary waves-effect waves-light">Update changes</button>
+                            </div>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal-dialog -->
+                </div><!-- /.modal -->
+
+                 <!-- delete author modal -->
+                 <div id="deleteAuthorModal" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="myModalLabel">Do you wanna delete?</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class ="modal-body">
+                                <p class="text-large">Once you delete can not retrive!</p>
+                            </div>
+                           
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-success waves-effect" data-bs-dismiss="modal">No</button>
+                                <button type="button" onclick="deletedAuthorFinally()" class="btn btn-danger waves-effect waves-light">Yes</button>
+                            </div>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal-dialog -->
+                </div><!-- /.modal -->
+
+
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <script>document.write(new Date().getFullYear())</script> © Skote.
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="text-sm-end d-none d-sm-block">
+                                    Design & Develop by Themesbrand
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+            <!-- end main content-->
+
+        </div>
+        <!-- END layout-wrapper -->
+
+      
+
+        <!-- Right bar overlay-->
+        <div class="rightbar-overlay"></div>
+
+        <!-- JAVASCRIPT -->
+        <script src="assets/libs/jquery/jquery.min.js"></script>
+        <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/libs/metismenu/metisMenu.min.js"></script>
+        <script src="assets/libs/simplebar/simplebar.min.js"></script>
+        <script src="assets/libs/node-waves/waves.min.js"></script>
+
+        <!-- apexcharts -->
+        <script src="assets/libs/apexcharts/apexcharts.min.js"></script>
+
+        <!-- dashboard init -->
+        <script src="assets/js/pages/dashboard.init.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <!-- App js -->
+        <script src="assets/js/app.js"></script>
+
+        <script>
+            // Get Author Data from API
+            async function getAuthors() {
+                let URL = "https://bs-api.sobuj.net/view/authors/readAuthors.php";
+                let tableData = document.getElementById("authorList");
+                try {
+                    // show loading message
+                    tableData.innerHTML = "<tr><td colspan='5'>Loading.......</td></tr>";
+                    // fetch api from authors
+                    let response = await axios.get(URL);
+                    let authors = response.data;
+                    // clear loading message
+                    tableData.innerHTML = '';
+
+                    if (!authors.length) {
+                        tableData.innerHTML = "<tr><td colspan='5'>No Author found</td></tr>";
+                        return;
+                    }
+
+                    // append data
+                    authors.forEach(author => {
+                        let row = document.createElement("tr");
+                        row.innerHTML = `
+                        <td>${author.author_id}</td>
+                        <td>${author.name}</td>
+                        <td>${author.email}</td>
+                        <td>
+                            <a href="#" class="btn btn-success edit-btn" data-id="${author.author_id}"><i class="mdi mdi-pencil font-size-16 text-light me-1"></i> Edit</a>
+                            <a href="#" class="btn btn-danger delete-btn" data-id="${author.author_id}"><i class="mdi mdi-trash-can font-size-16 text-light me-1"></i> Delete</a>
+                        </td>
+                        `;
+                        tableData.appendChild(row);
+                    });
+
+                    // AddEvent Listner for update data fetch
+                    document.querySelectorAll('.edit-btn').forEach(btn=>{
+                        btn.addEventListener('click',function(){
+                            editAuthor(this.dataset.id);
+                        })
+                    });
+
+                     // AddEvent Listner for delete data fetch
+                     document.querySelectorAll('.delete-btn').forEach(btn=>{
+                        btn.addEventListener('click',function(){
+                            deleteAuthor(this.dataset.id);
+                        })
+                    });
+                    
+                } catch (error) {
+                    console.error("Error for authors:",error);
+                    tableData.innerHTML = "<tr><td colspan='5'>Failed to load author data</td></tr>";
+                } finally {
+                    console.log("Author fetch attemt completed");
+                }
+            }
+            // Get Author Data from API
+            getAuthors();
+
+            // Add author data 
+            async function addAuthor() {
+                let URL = "https://bs-api.sobuj.net/view/authors/insertAuthor.php";
+                let authorName = document.getElementById("name").value.trim();
+                let authorEmail = document.getElementById("email").value.trim();
+                try{
+                    // validate
+                    if (!authorName || !authorEmail) {
+                        alert("All data required");
+                        return;
+                    }
+
+                    // Append Data
+                    let formData = new FormData();
+                    formData.append("name",authorName);
+                    formData.append("email",authorEmail);
+
+                    // Send data request
+                    let response = await axios.post(URL,formData);
+
+                    // Check api response
+                    if (response.status === 200) {
+                        alert("Author successfully inserted");
+                        document.getElementById("name").value="";
+                        document.getElementById("email").value="";
+
+                        // Close modal safely
+                        let modalElement = document.getElementById("addAuthorModal");
+                        let modal = bootstrap.Modal.getInstance(modalElement);
+                        if (modal) {
+                            modal.hide();
+                        }
+
+                        // refresh list
+                        getAuthors();
+                    } else{
+                        alert("Failed to add author");
+                    }
+                } catch (error){
+                    console.error("Error for adding author",error);
+                    alert("Failed, try again");
+                } finally {
+                    console.log('Author add attempt completed');
+                }
+            }
+            // Add author data 
+
+            // Edit author data details
+            let editAuthorId = null;
+            async function editAuthor(author_id) { 
+                let URL = `https://bs-api.sobuj.net/view/authors/getAuthorById.php?author_id=${author_id}`;
+                try {
+                    let response = await axios.get(URL);
+                    let authorData = response.data;
+                    if (authorData) {
+                        // populate data
+                        let name = document.getElementById("nameEdit").value = authorData.name;
+                        let email = document.getElementById("emailEdit").value = authorData.email;
+                        editAuthorId = author_id;
+                    }
+                    
+
+                    // Show modal to fetch data
+                    let editmodal = new bootstrap.Modal(document.getElementById('updateAuthorModal'));
+                    editmodal.show();
+                } catch (error) {
+                    console.error("Error fetching data", error);
+                    alert("Author load failed");
+                }
+            }
+            
+            // Update Author Data
+            async function updateAuthor() {
+                let URL = "https://bs-api.sobuj.net/view/authors/updateAuthor.php";
+                let authorName = document.getElementById("nameEdit").value.trim();
+                let authorEmail = document.getElementById("emailEdit").value.trim();
+                try{
+                    // validate
+                    if (!authorName || !authorEmail) {
+                        alert("All data required");
+                        return;
+                    }
+
+                    // Append Data
+                    let formData = new FormData();
+                    formData.append("author_id", editAuthorId);
+                    formData.append("name",authorName);
+                    formData.append("email",authorEmail);
+
+                    // Send data request
+                    let response = await axios.post(URL,formData);
+
+                    // Check api response
+                    if (response.status === 200) {
+                        alert("Author successfully Updated");
+                        document.getElementById("nameEdit").value="";
+                        document.getElementById("emailEdit").value="";
+
+                        // Close modal safely
+                        let modalElement = document.getElementById("updateAuthorModal");
+                        let modal = bootstrap.Modal.getInstance(modalElement);
+                        if (modal) {
+                            modal.hide();
+                        }
+
+                        // refresh list
+                        getAuthors();
+                    } else{
+                        alert("Failed to update author");
+                    }
+                } catch (error){
+                    console.error("Error for updating author",error);
+                    alert("Failed, try again");
+                } finally {
+                    console.log('Author add attempt completed');
+                }
+            }
+
+
+            // delete modal show
+            let deleteAuthorId = null;
+            function deleteAuthor(id) {
+                deleteAuthorId = id;
+                // show delete modal
+                let deleteModal = new bootstrap.Modal(document.getElementById("deleteAuthorModal"));
+                deleteModal.show();
+            }
+
+            // delete finally
+            async function deletedAuthorFinally() {
+                let URL = "https://bs-api.sobuj.net/view/authors/deleteAuthor.php";
+               try {
+                    if (!deleteAuthorId) {
+                        alert("Invalid ID");
+                        return;
+                    }
+
+                    // Append data
+                    let formData = new FormData();
+                    formData.append("author_id",deleteAuthorId);
+                 
+
+                    // send the request
+                    let response = await axios.post(URL,formData);
+
+                    // Check API response
+                    if (response.status === 200) {
+                        alert("Successfully deleted");
+
+                        // close the modal
+                        let modal = bootstrap.Modal.getInstance(document.getElementById("deleteAuthorModal"));
+                        modal.hide();
+
+                        // refresh
+                        getAuthors();
+                    } else{
+                        alert("Failed to delete author");
+                    }
+               } catch (error) {
+                    console.error("Tes",error);
+                    alert("Delete failed, try again");
+               }
+            }
+        </script>
+    </body>
+
+</html>

@@ -1,0 +1,679 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        
+        <meta charset="utf-8" />
+        <title>Dashboard | Books</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+        <meta content="Themesbrand" name="author" />
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- Bootstrap Css -->
+        <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+        <!-- Icons Css -->
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <!-- App Css-->
+        <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body data-sidebar="dark">
+
+    <!-- <body data-layout="horizontal" data-topbar="dark"> -->
+
+        <!-- Begin page -->
+        <div id="layout-wrapper">
+
+            
+            <header id="page-topbar">
+                <div class="navbar-header">
+                    <div class="d-flex">
+                        <!-- LOGO -->
+                        <div class="navbar-brand-box">
+                            <a href="index.html" class="logo logo-dark">
+                                <span class="logo-sm">
+                                    <img src="assets/images/logo.svg" alt="" height="22">
+                                </span>
+                                <span class="logo-lg">
+                                    <img src="assets/images/logo-dark.png" alt="" height="17">
+                                </span>
+                            </a>
+
+                            <a href="index.html" class="logo logo-light">
+                                <span class="logo-sm">
+                                    <img src="assets/images/logo-light.svg" alt="" height="22">
+                                </span>
+                                <span class="logo-lg">
+                                    <img src="assets/images/logo-light.png" alt="" height="19">
+                                </span>
+                            </a>
+                        </div>
+
+                     
+
+                    </div>
+
+                   
+                </div>
+            </header>
+
+            <!-- ========== Left Sidebar Start ========== -->
+            <div class="vertical-menu">
+
+                <div data-simplebar class="h-100">
+
+                    <!--- Sidemenu -->
+                    <div id="sidebar-menu">
+                        <!-- Left Menu Start -->
+                        <ul class="metismenu list-unstyled" id="side-menu">
+                            <li class="menu-title" key="t-menu">Menu</li>
+
+                        
+                            <li>
+                                <a href="authors.html" class="waves-effect">
+                                    <i class="bx bx-calendar"></i>
+                                    <span key="t-calendar">Authors Management</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="books.html" class="waves-effect">
+                                    <i class="bx bx-chat"></i>
+                                    <span key="t-chat">Book Management</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="customer.html" class="waves-effect">
+                                    <i class="bx bx-file"></i>
+                                    <span key="t-file-manager">Customer Management</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="orders.html" class="waves-effect">
+                                    <i class="bx bx-file"></i>
+                                    <span key="t-file-manager">Order Management</span>
+                                </a>
+                            </li>
+                           
+                        </ul>
+                    </div>
+                    <!-- Sidebar -->
+                </div>
+            </div>
+            <!-- Left Sidebar End -->
+
+            
+
+            <!-- ============================================================== -->
+            <!-- Start right Content here -->
+            <!-- ============================================================== -->
+            <div class="main-content">
+
+                <div class="page-content">
+                    <div class="container-fluid">
+
+                        <!-- start page title -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                                    <h4 class="mb-sm-0 font-size-18">Dashboard</h4>
+
+                                    <div class="page-title-right">
+                                        <ol class="breadcrumb m-0">
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboards</a></li>
+                                            <li class="breadcrumb-item active">Dashboard</li>
+                                        </ol>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end page title -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="row mb-2">
+                                            <div class="col-sm-4">
+                                                <div class="search-box me-2 mb-2 d-inline-block">
+                                                    <div class="position-relative">
+                                                        <input type="text" class="form-control" placeholder="Search...">
+                                                        <i class="bx bx-search-alt search-icon"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <div class="text-sm-end">
+                                                    <button type="button" class="btn btn-success btn-rounded waves-effect waves-light mb-2 me-2" data-bs-toggle="modal" data-bs-target="#addBookModal"><i class="mdi mdi-plus me-1"></i> New Book</button>
+                                                </div>
+                                            </div><!-- end col-->
+                                        </div>
+
+                                        <div class="table-responsive">
+                                            <table class="table align-middle table-nowrap">
+                                                <thead>
+                                                    <tr> 
+                                                        <th>ID</th>
+                                                        <th>Title</th>
+                                                        <th>Price</th>
+                                                        <th>Stock Qty</th> 
+                                                        <th>Author Id</th> 
+                                                        <th>Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="bookList">
+                                                   
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <ul class="pagination pagination-rounded justify-content-end mb-2">
+                                            <li class="page-item disabled">
+                                                <a class="page-link" href="javascript: void(0);" aria-label="Previous">
+                                                    <i class="mdi mdi-chevron-left"></i>
+                                                </a>
+                                            </li>
+                                            <li class="page-item active"><a class="page-link" href="javascript: void(0);">1</a></li>
+                                            <li class="page-item"><a class="page-link" href="javascript: void(0);">2</a></li>
+                                           
+                                            <li class="page-item">
+                                                <a class="page-link" href="javascript: void(0);" aria-label="Next">
+                                                    <i class="mdi mdi-chevron-right"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row -->
+                       
+                    </div>
+                    <!-- container-fluid -->
+                </div>
+                <!-- End Page-content -->
+
+                <!-- Add Book modal -->
+                <div id="addBookModal" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="myModalLabel">Add New Book</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="mb-3">
+                                    <label for="title" class="form-label">Book Title</label>
+                                    <input type="text" class="form-control" name="title" id="title">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="price" class="form-label">Book Price</label>
+                                    <input type="text" class="form-control" name="price" id="price">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="stock_quantity" class="form-label">Book Stock Qty</label>
+                                    <input type="text" class="form-control" name="stock_quantity" id="stock_quantity">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="authorName" class="form-label">Author Name</label>
+                                    <select class="form-select" id="authorName">
+                                        
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Close</button>
+                                <button type="button" onclick="addBook()" class="btn btn-primary waves-effect waves-light">Save changes</button>
+                            </div>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal-dialog -->
+                </div><!-- /.modal -->
+
+                <!-- Edit Book modal -->
+                <div id="editBookModal" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="myModalLabel">Edit Book</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <!-- Hidden Input for Book ID -->
+                                <input type="hidden" id="editBookId" />
+
+                                <div class="mb-3">
+                                    <label for="editTitle" class="form-label">Book Title</label>
+                                    <input type="text" class="form-control" name="title" id="editTitle">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="editPrice" class="form-label">Book Price</label>
+                                    <input type="text" class="form-control" name="price" id="editPrice">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="editStockQuantity" class="form-label">Book Stock Qty</label>
+                                    <input type="text" class="form-control" name="stock_quantity" id="editStockQuantity">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="editAuthorName" class="form-label">Author Name</label>
+                                    <select class="form-select" id="editAuthorName">
+                                        
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Close</button>
+                                <button type="button" onclick="updateBook()" class="btn btn-primary waves-effect waves-light">Save changes</button>
+                            </div>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal-dialog -->
+                </div><!-- /.modal -->
+
+
+                <!-- Delete Confirmation Modal -->
+                <div id="deleteBookModal" class="modal fade" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="deleteModalLabel">Confirm Delete</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Are you sure you want to delete this book?</p>
+                                <!-- Hidden field to store book ID -->
+                                <input type="hidden" id="deleteBookId">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                <button type="button" class="btn btn-danger" onclick="confirmDeleteBook()">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <script>document.write(new Date().getFullYear())</script> © Skote.
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="text-sm-end d-none d-sm-block">
+                                    Design & Develop by Themesbrand
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+            <!-- end main content-->
+
+        </div>
+        <!-- END layout-wrapper -->
+
+      
+
+        <!-- Right bar overlay-->
+        <div class="rightbar-overlay"></div>
+
+        <!-- JAVASCRIPT -->
+        <script src="assets/libs/jquery/jquery.min.js"></script>
+        <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/libs/metismenu/metisMenu.min.js"></script>
+        <script src="assets/libs/simplebar/simplebar.min.js"></script>
+        <script src="assets/libs/node-waves/waves.min.js"></script>
+
+        <!-- apexcharts -->
+        <script src="assets/libs/apexcharts/apexcharts.min.js"></script>
+
+        <!-- dashboard init -->
+        <script src="assets/js/pages/dashboard.init.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <!-- App js -->
+        <script src="assets/js/app.js"></script>
+
+        <script>
+            
+            async function getBooks() {
+            let booksURL = "https://bs-api.sobuj.net/view/books/readBook.php";
+            let authorsURL = "https://bs-api.sobuj.net/view/authors/readAuthors.php";
+            let tableData = document.getElementById("bookList");
+
+            try {
+                tableData.innerHTML = '<tr><td colspan="6">Loading........</td></tr>';
+
+                // Fetch books and authors
+                let [booksResponse, authorsResponse] = await Promise.all([
+                    axios.get(booksURL),
+                    axios.get(authorsURL)
+                ]);
+
+                let books = booksResponse.data;
+                let authors = authorsResponse.data;
+
+                console.log("Books API Response:", books);
+                console.log("Authors API Response:", authors);
+
+                tableData.innerHTML = '';
+
+                if (!books.length) {
+                    tableData.innerHTML = "<tr><td colspan='6'>No Books Data Found</td></tr>";
+                    return;
+                }
+
+                // Create an author map { author_id: author_name }
+                let authorMap = {};
+                authors.forEach(author => {
+                    authorMap[author.author_id.toString()] = author.name; // Convert to string for safer lookup
+                });
+
+                books.forEach(book => {
+                    console.log("Processing Book:", book); 
+
+                    
+                    let authorName = book.author_id ? (authorMap[book.author_id] || "Unknown Author") : "No Author Assigned";
+
+
+                    let row = document.createElement("tr");
+                    row.innerHTML = `
+                        <td>${book.book_id}</td>
+                        <td>${book.title}</td>
+                        <td>${book.price}</td>
+                        <td>${book.stock_quantity}</td>
+                        <td>${authorName}</td> 
+                        <td>
+                            <a href="#" class="btn btn-success edit-btn" data-id="${book.book_id}">
+                                <i class="mdi mdi-pencil font-size-16 text-light me-1"></i> Edit
+                            </a>
+                            <a href="#" class="btn btn-danger delete-btn" data-id="${book.book_id}">
+                                <i class="mdi mdi-trash-can font-size-16 text-light me-1"></i> Delete
+                            </a>
+                        </td>
+                    `;
+                    tableData.appendChild(row);
+                });
+
+            } catch (error) {
+                console.error("Error fetching books:", error);
+                tableData.innerHTML = "<tr><td colspan='6'>Failed to load books data</td></tr>";
+            }
+        }
+
+            getBooks();
+
+/** Add Book **/
+async function addBook() {
+    let URL = "https://bs-api.sobuj.net/view/books/insertBook.php";
+    let title = document.getElementById("title").value.trim();
+    let price = document.getElementById("price").value.trim();
+    let stock_quantity = document.getElementById("stock_quantity").value.trim();
+    let author_id = document.getElementById("authorName").value; // Get the selected author ID
+
+    try {
+        // ✅ Fix: Correct validation
+        if (!title || !price || !stock_quantity || !author_id) {
+            alert("Please fill all fields.");
+            return;
+        }
+
+        // ✅ Fix: Correct data submission
+        loadAuthors();
+        let formData = new FormData();
+        formData.append("title", title);
+        formData.append("price", price);
+        formData.append("stock_quantity", stock_quantity);
+        formData.append("author_id", author_id); // Use the selected author_id
+
+        // ✅ Fix: Correct Axios request
+        let response = await axios.post(URL, formData, {
+            headers: {
+                "Content-Type": "multipart/form-data"
+            }
+        });
+
+        console.log("API Response:", response.data);
+
+        if (response.status === 200 && response.data.success) {
+            alert("Book added successfully!");
+
+            // ✅ Fix: Clear only valid fields
+            document.getElementById("title").value = '';
+            document.getElementById("price").value = '';
+            document.getElementById("stock_quantity").value = '';
+            document.getElementById("authorName").value = '';  // Clear author selection
+
+            // ✅ Fix: Close Bootstrap modal safely
+            let modalElement = document.getElementById("addBookModal");
+            let modal = bootstrap.Modal.getInstance(modalElement);
+            if (modal) modal.hide();
+
+            // ✅ Fix: Refresh book list (if needed)
+            if (typeof getBooks === "function") {
+                getBooks();
+            }
+        } else {
+            alert("Failed to add book: " + (response.data.error || "Unknown error"));
+        }
+    } catch (error) {
+        console.error("Error adding book:", error);
+        alert("An error occurred. Please try again.");
+    } finally {
+        console.log("Book add attempt completed");
+    }
+}
+
+
+
+            // Get Author data from API to dropdown menu 
+            async function loadAuthors() {
+                let URL = "https://bs-api.sobuj.net/view/authors/readAuthors.php";
+                let authorName = document.getElementById("authorName");
+
+                try {
+                    // Fetch authors
+                    let response = await axios.get(URL);
+                    
+                    // Clear existing options except "Choose..."
+                    authorName.innerHTML = '<option selected>Choose...</option>';
+
+                    // Check if data exists
+                    if (!response.data || !Array.isArray(response.data)) {
+                        console.error("Invalid API response", response.data);
+                        return;
+                    }
+
+                    // Loop through authors and create options
+                    response.data.forEach(author => {
+                        let option = document.createElement("option");
+                        option.value = author.author_id; // Set the value to author_id
+                        option.textContent = author.name; // Display author name
+                        authorName.appendChild(option);
+                    });
+
+                } catch (error) {
+                    console.error("Error loading authors:", error);
+                }
+            }
+
+            // Call function to load authors when page loads
+            loadAuthors();
+       
+            /** Add Book **/
+
+
+            
+           // Edit boook data details
+            // Function to fetch authors and load them in the select dropdown
+            async function loadAuthorsForEdit(selectedAuthorId = null) {
+                let URL = "https://bs-api.sobuj.net/view/authors/readAuthors.php";
+                let authorSelect = document.getElementById("editAuthorName");
+
+                try {
+                    let response = await axios.get(URL);
+                    let authors = response.data;
+
+                    // Clear existing options except "Choose..."
+                    authorSelect.innerHTML = '<option selected>Choose...</option>';
+
+                    // Loop through authors and create options
+                    authors.forEach(author => {
+                        let option = document.createElement("option");
+                        option.value = author.author_id;  // Set the value to author_id
+                        option.textContent = author.name; // Display author name
+
+                        // Check if this is the selected author and mark it as selected
+                        if (author.author_id === selectedAuthorId) {
+                            option.selected = true;
+                        }
+
+                        authorSelect.appendChild(option);
+                    });
+                } catch (error) {
+                    console.error("Error loading authors:", error);
+                }
+            }
+            let editBookID = null;
+            async function editBook(book_id) {
+                let URL = `https://bs-api.sobuj.net/view/books/getBookById.php?book_id=${book_id}`;
+                try {
+                    
+                    // Fetch the book details by ID
+                    let response = await axios.get(URL);
+                    let bookData = response.data;
+
+                    if (response.status === 200 && bookData) {
+                        // Populate the edit form with the fetched book data
+                        document.getElementById("editBookId").value = bookData.book_id;
+                        document.getElementById("editTitle").value = bookData.title;
+                        document.getElementById("editPrice").value = bookData.price;
+                        document.getElementById("editStockQuantity").value = bookData.stock_quantity;
+                        document.getElementById("editAuthorName").value = bookData.author_id; // Assuming you are directly using author_id
+
+                        // Load authors and pre-select the author for the book
+                        await loadAuthorsForEdit(bookData.author_id);
+                        // Save the book ID for the edit operation
+                        editBookID = book_id;
+                    } else {
+                        // If the book data is not fetched successfully
+                        alert("Failed to fetch book data. Please try again.");
+                    }
+                    
+
+                    // Show modal to fetch data
+                    let editmodal = new bootstrap.Modal(document.getElementById('editBookModal'));
+                    editmodal.show();
+                } catch (error) {
+                    console.error("Error fetching data", error);
+                    alert("Book data load failed");
+                }
+            }
+            
+            // Update Author Data
+            async function updateBook() {
+                let URL = "https://bs-api.sobuj.net/view/books/updateBook.php";  // Your API endpoint for updating the book
+                let bookId = document.getElementById("editBookId").value;  // Get the book ID from the hidden input
+                let title = document.getElementById("editTitle").value.trim();  // Get the updated title
+                let price = document.getElementById("editPrice").value.trim();  // Get the updated price
+                let stock_quantity = document.getElementById("editStockQuantity").value.trim();  // Get the updated stock quantity
+                let authorId = document.getElementById("editAuthorName").value.trim();  // Get the updated author ID
+                try{
+                    // validate
+                    if (!title || !price || !stock_quantity || !authorId) {
+                        alert("Please fill all fields.");
+                        return;
+                    }
+
+                    // Append Data
+                    let formData = new FormData();
+                    formData.append("book_id", bookId);
+                    formData.append("title",title);
+                    formData.append("price",price);
+                    formData.append("stock_quantity", stock_quantity);
+                    formData.append("author_id",authorId);
+
+                    // Send update request
+                    let response = await axios.post(URL, formData, {
+                        headers: {
+                            "Content-Type": "multipart/form-data"
+                        }
+                    });
+                    console.log("API Response:", response.data);
+
+                    // Check api response
+                    if (response.status === 200) {
+                        alert("Book updated successfully!");
+                        
+                        // Clear form fields
+                        document.getElementById("editTitle").value = '';
+                        document.getElementById("editPrice").value = '';
+                        document.getElementById("editStockQuantity").value = '';
+                        document.getElementById("editAuthorName").value = '';
+                       
+                        // Close the modal safely
+                        let modalElement = document.getElementById("editBookModal");
+                        let modal = bootstrap.Modal.getInstance(modalElement);
+                        if (modal) modal.hide();
+
+                        // Refresh the book list
+                        getBooks();  // Assuming you have a function that fetches the books
+                    } else{
+                        alert("Failed to update book: " + response.data.error);
+                    }
+                } catch (error){
+                    console.error("Error updating book:", error);
+                    alert("An error occurred while updating the book. Please try again.");
+                } finally {
+                    console.log("Update attempt completed.");
+                }
+            }
+
+
+            // Function to open delete confirmation modal
+            function openDeleteModal(bookId) {
+                // Set the book ID in the hidden field
+                document.getElementById("deleteBookId").value = bookId;
+
+                // Show the delete modal
+                let deleteModal = new bootstrap.Modal(document.getElementById('deleteBookModal'));
+                deleteModal.show();
+            }
+
+
+            // Confirm Function to delete a book
+            async function confirmDeleteBook() {
+                let bookId = document.getElementById("deleteBookId").value;
+                let URL = `https://bs-api.sobuj.net/view/books/deleteBook.php?book_id=${bookId}`;
+
+                try {
+                    // Append data
+                    let formData = new FormData();
+                    formData.append("book_id",bookId);
+                    let response = await axios.post(URL,formData);
+
+                    if (response.status === 200) {
+                        alert("Book deleted successfully!");
+                        
+                        // Hide the modal
+                        let deleteModal = bootstrap.Modal.getInstance(document.getElementById("deleteBookModal"));
+                        if (deleteModal) deleteModal.hide();
+
+                        // Refresh the book list
+                        getBooks();
+                    } else {
+                        alert("Failed to delete the book.");
+                    }
+                } catch (error) {
+                    console.error("Error deleting the book:", error);
+                    alert("An error occurred while deleting the book. Please try again.");
+                }
+            }
+            // Confirm Function to delete a book
+        </script>
+    </body>
+
+</html>
